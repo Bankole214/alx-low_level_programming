@@ -2,26 +2,28 @@
 /**
 * main - combo of 2 numbers
 *
-* Return: always 0
+* Return: Always 0
 */
 int main(void)
 {
-	int n;
-	int m;
+	int n, m;
 
-	for (n = '0'; n <= '9'; n++)
+	for (n = 0; n <= 9; n++)
 	{
-		for (m = '0'; m <= '9'; m++)
+		for (m = 0; m <= 9; m++)
 		{
 			if ((n < m) && (m <= 9))
 			{
-				putchar(n);
-				putchar(m);
-				putchar(',');
-				putchar(' ');
+				putchar(n + '0');
+				putchar(m + '0');
+				if (n != 8 || m != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
