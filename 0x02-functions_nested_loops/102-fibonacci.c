@@ -1,19 +1,29 @@
 #include <stdio.h>
 
-int main() {
-    int n = 50;
-    int sequence[n];
-    sequence[0] = 1;
-    sequence[1] = 2;
-    for (int i = 2; i < n; i++) {
-        sequence[i] = sequence[i-1] + sequence[i-2];
-    }
-    for (int i = 0; i < n; i++) {
-        printf("%d", sequence[i]);
-        if (i < n-1) {
-            printf(", ");
-        }
-    }
-    printf("\n");
-    return 0;
+/**
+  * main - print the first 50 fibonacci numbers.
+  * Return: Nothing.
+  */
+
+int main(void)
+{
+	int i = 0;
+	long j = 1, k = 2;
+
+	while (i < 50)
+	{
+	if (i == 0)
+	printf("%ld", j);
+	else if (i == 1)
+	printf(", %ld", k);
+	else
+	{
+	k += j;
+	j = k - j;
+	printf(", %ld", k);
+	}
+	++i;
+	}
+	printf("\n");
+	return (0);
 }
